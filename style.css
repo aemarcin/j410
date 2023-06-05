@@ -125,12 +125,14 @@ a.text:hover, a.text:active {
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: 96%;
+    transition: transform .15s;
 	text-decoration: none;
 }
 .row a:hover{
 	    background-color: goldenrod;
     color: initial;
 	    text-decoration: none;
+      transform: scale(1.1);
     transition: all 0.3s ease-in 0s;
 }
 /*----------------media queries-----------------*/
