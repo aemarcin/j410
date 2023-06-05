@@ -242,12 +242,14 @@ a.text:hover, a.text:active {
 }
 
 .container {
-    top: 105px;
+   top: 105px;
 	position: relative;
     background-image: url(img/main.jpg);
     height: 100vh;
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: top center;
+    object-fit: contain;
+    max-width: 100%;
 }
 
 /*----------------Main Content Area(this is where all the content below the navigation bar will go)--*/
