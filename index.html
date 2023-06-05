@@ -1,0 +1,327 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Site Title | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" width="190" height="75" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Sustainable Fashion</a>
+        </li>
+	   <li>
+          <a href="#gal">Shop on Campus</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Word on the Street</a>
+        </li>
+        <li>
+          <a href="#vid">Alternative Fashion</a>
+			</li>
+      <li>
+          <a href="#num">Stats and Figures</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Sustainable Fashion</h2>
+<article>
+<p class="tab">This is fashion that is ethically made and environmentally friendly. This includes fashion that is second hand, hand made, uses ecofriendly materials, and much more.<br><br>Why is this important? Sustainably made clothing is going to be high quality and last you years to come. It also requires less resources to create a better product while reducing your carbon footprint and supporting ethical labor. In addition, shopping second hand prevents clothes from ending up in the landfill, creates jobs, and creates something similar to a circular economy as opposed to mass consumption.<br><br>Come explore some of San Luis Obispo's shining examples as well as Cal Poly student contributions!</p>
+<p class="tab"><a href="#gal">Navigation</a></p>
+    <iframe src="https://giphy.com/embed/l2JhNhTsaqOshnGVO" width="100%" height="480" frameBorder="0" class="giphy-embed" style="pointer-events: none"></iframe>
+</article>
+</div>
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosfix="true" data-image-src="img/parallax_2.jpg">
+</div>
+<!--end of parallax image-->
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Shop on Campus</h2>
+<article><!--beginning of article-->
+<p class="tab">Cal Poly Sustainable Fashion Club hosted its first Swap and Shop of the year  on April 20th on Dexter Lawn.</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="Two girls, Starla Klipper (left) and Emma Rowland (right), sit on the lawn with their clothes for sale laid out on a blanket. They are not a part of the club but follow the club’s Instagram and signed up to set up shop. Starla is a third-year Sociology major and Emma is a third-year Animal Science major. They both enjoy selling their unwanted clothes for a little extra cash, as well as promoting second-hand fashion and earth-friendly consumerism."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Students gather from around campus to shop for second-hand clothes. Morgan Bandanza, a second-year Philosophy major, looks at the dresses for sale. She likes to shop mostly second-hand for unique and affordable clothes and wanted to check out the Swap and Shop to find some goodies looking for a second life. The dress she picked out could have gone to the landfill, but will now give Bandanza confidence and style in her new outfit. "/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Dexter Lawn has always been a hub for student culture and activity, making it the perfect place to host the first Swap and Shop event of the year.  It’s also a great place for students to relax, do homework, eat, and hang out with friends."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="Abi Miller (right), a Studio Art student at Cuesta College, sets up her clothes on a blanket to sell to students and visitors. Her friend (left), Alison Phillips, told her about the Swap and Shop, and she knew she wanted to be a part of it. Here, she can contribute to the cycle of second-hand shopping by selling clothes she doesn’t use anymore to someone who will wear and appreciate them once again."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="One man’s trash is another man’s treasure! Clothes that no longer spark joy for their owners wait on a rack to be picked up by someone who will cherish them. This prevents waste and gives others the chance to wear unique clothes with their own history."/>
+<img src="img/6.jpg" width="100%" height="100%" alt="Jordan Forer, a Graphic Communications major, designs his own clothes. He buys boring T-shirts from thrift stores and adds his own pizazz to make them new and improved. People who wouldn’t normally pick up a plain old T-shirt now can give a second life to a personalized item of clothing, unique only to them. His business is an awesome way to level up the cycle of second-hand clothes and contribute to waste reduction and over-production."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Many students visited the Swap and Shop, showing that second-hand shopping is just as fun, if not more. It offers something shopping retail cannot – completely unique clothes, lower costs, and more sustainability. This meet-up on Dexter Lawn is also a fun, community activity similar to treasure hunting!"/>
+<img src="img/8.jpg" width="100%" height="100%" alt="Phoebe Burke, a fourth-year Biological Sciences major, shops for thrifted clothes at one of the many pop-up sales. This is the first year that Cal Poly Sustainable Fashion Club has committed to putting on monthly Swap and Shops in order to create a consistent space for the campus community to come together to donate, exchange, and shop for clothes. “We hope to encourage sustainability and this creates a way for our campus to practice aspects of a circular economy,” says Sarah LaFazia, the social media and communications chair for the Sustainable Fashion Club (not pictured.)"/>
+<img src="img/9.jpg" width="100%" height="100%" alt="Allison Philips, a fourth-year Art and Design major, sells her handmade jewelry to students. A key part of the cycle of second-hand shopping is giving back – this means creating homemade jewelry, upcycling clothes, and giving back to thrift stores. Otherwise, second-hand shopping could not be sustainable if it is only purchasing! Often, people will buy cheap, thrifted clothes and resell them online for quadruple the price which takes items out of the cycle for many people who cannot afford the price increase. The Swap and Shop is a great way for people to give back to the cycle to keep it going, instead of removing the accessibility aspect of second-hand shopping."/>
+<img src="img/10.jpg" width="100%" height="100%" alt="After a long day of selling their collection of thrifted baseball caps, Logan O’Connell and Eli Ryseff relax on the lawn enjoying the sun. Logan is a second-year Business major and Eli is also a second-year Business major.  While their specialty may be niche, finding something you like and reselling it is a great way to make sure every aspect of second-hand shopping remains in the cycle of donate, thrift, and sell."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Navigation</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosfix="true" data-image-src="img/parallax_3.jpg">
+</div>
+<!--end of parallax image-->
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Word on the Street</h2>
+<article>
+  <p class="tab">Click on images to hear ...<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/1.jpg'" onMouseOut="this.src='img/rollover/1.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/2.jpg'" onMouseOut="this.src='img/rollover/2.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/3.jpg'" onMouseOut="this.src='img/rollover/3.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Navigation</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosfix="true" data-image-src="img/parallax_4.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">Alternative Fashion</h2>
+<article>
+<p class="tab">Kylee Ruiz discusses her experiences of wearing alternative clothing in a small town.</p>	
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Navigation</a></p>
+</article>
+</div>
+<!--end of video section-->
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosfix="true" data-image-src="img/parallax_5.jpg">
+</div>
+<!--end of parallax image-->
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="num">Stats and Figures</h2>
+<article>
+<p class="tab"></p>
+<!--infographic embed code here-->
+   <iframe src="https://drive.google.com/file/d/1G9ucEMJCkg5YiTXj8Okz1hcnCLKZkl9o/preview" width="640" height="480" allow="autoplay"></iframe>
+</article>
+</div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>Site Name Here | San Luis Obispo, CA | <a href="mailto: email@email.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 20__ | Site by You 
+</footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html>
